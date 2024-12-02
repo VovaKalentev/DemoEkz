@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+.mainWrapper,.cardWrapper{
+    border:1px solid black;
+}
+.mainWrapper{
+    width: 800px;
+    margin:0 auto;
+    padding:50px;
+}
+.cardWrapper{
+    margin:0 auto;
+    padding:20px;
+    margin-bottom: 20px;
+}
+.wrOnArticle{
+
+}
