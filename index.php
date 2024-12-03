@@ -7,9 +7,10 @@ session_start();
 if(isset($_POST["login"]) && isset($_POST["password"])){
     $username = $_POST["login"];
     $password = $_POST["password"];
+    mysqli_real_escape_string($link,$username);
+    mysqli_real_escape_string($link,$password);
     $_SESSION["login"] = $username;
     $_SESSION["password"] = $password;
-    print_r($_SESSION);
     if($username == "admin"|| $password == "111"){
         $_SESSION["user"] = "admin";
         header("Location:admin.php");
