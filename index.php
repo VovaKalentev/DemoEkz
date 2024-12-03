@@ -25,7 +25,7 @@ if(isset($_POST["login"]) && isset($_POST["password"])){
         }
     }
 }else{
-    echo "Заполните все поля";
+    echo `<div class="modalBg"><div class="modal"><p>Заполните все поля</p></div></div>`;
 }
 
 ?>
@@ -35,14 +35,13 @@ if(isset($_POST["login"]) && isset($_POST["password"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<form action="" method="post">
-    <label for="login">Введите свой email</label>
-    <input type="text" id="login" name="login">
-    <label for="password">Введите свой пароль</label>
-    <input type="password" id="password" name="password">
-    <input type="submit" value="Авторизоваться">
+<form action="" method="post" id="avtor">
+    <input type="text" id="login" name="login" placeholder="Введите логин">
+    <input type="password" id="password" name="password" placeholder="Введите пароль">
+    <input type="submit" value="Авторизоваться" id="button">
 </form>
 
 </body>

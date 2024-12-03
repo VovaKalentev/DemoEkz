@@ -54,7 +54,8 @@ if ($_SESSION["user"] == "admin") {
                 <?php }}; 
             } ?>
     </section>
-    <a href="index.php" onclick="<?php session_destroy();?>" class="exit">Выход</a>
+    <a href="createPartner.php" class="link">Добавить партнера</a>
+    <a href="index.php" class="exit">Выход</a>
 </body>
 
 </html>

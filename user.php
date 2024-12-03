@@ -51,6 +51,8 @@ $sale = 0;
                 </article>
             <?php };?>
     </section>
-    <a href="index.php" onclick="<?php session_destroy();?>" class="exit">Выход</a>
+
+    <a href="index.php" class="exit">Выход</a>
+    <?php //session_destroy();?>
 </body>
 </html> 
