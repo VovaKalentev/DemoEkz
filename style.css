@@ -19,6 +19,7 @@
   height: 45px;
   margin-bottom: 30px;
   border-radius: 15px;
+  text-align: center;
   margin-top: 25px;
 }
 #avtor #password {
@@ -26,6 +27,7 @@
   height: 45px;
   margin-bottom: 30px;
   border-radius: 15px;
+  text-align: center;
 }
 #avtor #button {
   width: 250px;
