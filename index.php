@@ -1,6 +1,4 @@
 <?php 
-//Запрос для скидки 
-//SELECT `count-partner-product` FROM `partners_import`,`partner_products_import` WHERE `partner_products_import`.`name-partner-product` = `partners_import`.`id-partner-import`;
 error_reporting(E_ALL);
 require_once("link.php");
 session_start();
