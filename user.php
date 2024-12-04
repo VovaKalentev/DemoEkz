@@ -52,7 +52,6 @@ $sale = 0;
             <?php };?>
     </section>
 
-    <a href="index.php" class="exit">Выход</a>
-    <?php //session_destroy();?>
+    <a href="exitpage.php" class="exit">Выход</a>
 </body>
 </html> 

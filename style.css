@@ -1,73 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-size: 25px;
-}
-#avtor{
-    width: 400px;
-    height: 250px;
-    border:1px solid black;
-    border-radius: 20px;
-    margin:0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#avtor>#login,#avtor>#password{
-    width: 350px;
-    height: 45px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-}
-#avtor>#login{
-    margin-top: 25px;
-}
-#avtor>#button{
-    width: 250px;
-    height: 35px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-.mainWrapper,.cardWrapper{
-    border:1px solid black;
-}
-.mainWrapper{
-    width: 800px;
-    margin:0 auto;
-    padding:50px;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
 }
 
-.cardWrapper{
-    margin:0 auto;
-    padding:20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+#avtor {
+  width: 400px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.exit{
-    text-decoration: none;
-    color: rgb(66, 67, 77);
-    border:2px solid rgb(93, 93, 236);
-    width: 200px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-duration: .7s;
+#avtor #login {
+  width: 350px;
+  height: 45px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  margin-top: 25px;
 }
-.link{
-    text-decoration: none;
-    color: rgb(66, 67, 77);
-    border:2px solid rgb(93, 93, 236);
-    width: 300px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-duration: .7s;
+#avtor #password {
+  width: 350px;
+  height: 45px;
+  margin-bottom: 30px;
+  border-radius: 15px;
 }
-.exit:hover,.link:hover{
-    background-color: rgb(185, 185, 236);
+#avtor #button {
+  width: 250px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
+.mainWrapper {
+  border: 1px solid black;
+  width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+}
+.mainWrapper .cardWrapper {
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.exit {
+  text-decoration: none;
+  color: rgb(66, 67, 77);
+  border: 2px solid rgb(93, 93, 236);
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.7s;
+}
+.exit:hover {
+  background-color: rgb(185, 185, 236);
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(66, 67, 77);
+  border: 2px solid rgb(93, 93, 236);
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.7s;
+}
+.link:hover {
+  background-color: rgb(185, 185, 236);
+}
+
+#createUser {
+  width: 410px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */

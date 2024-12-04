@@ -16,7 +16,7 @@ if ($_SESSION["user"] == "admin") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin panel</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -27,17 +27,21 @@ if ($_SESSION["user"] == "admin") {
                     $id =$row['id-partner-import'];
                     $selectSaleForPartner = "SELECT `count-partner-product` FROM `partner_products_import` WHERE `partner_products_import`.`name-partner-product` = '$id';";
                     $querySaleForPartner = mysqli_query($link,$selectSaleForPartner);
-                    while($all = mysqli_fetch_assoc($querySaleForPartner)){
-                        $summ += $all["count-partner-product"];
-                    }
-                    if($summ < 10000){
-                        $sale = 0;
-                    }else if($summ >= 10000 && $summ <= 50000){
-                        $sale = 5;
-                    }else if($summ >= 50000 && $summ <= 300000){
-                        $sale = 10;
-                    }else if($summ >= 300000){
-                        $sale = 15;
+                    if(mysqli_num_rows($querySaleForPartner) == 0) {
+                        $sale =0;
+                    }else{
+                        while($all = mysqli_fetch_assoc($querySaleForPartner)){
+                            $summ += (int)$all["count-partner-product"];
+                        }
+                        if($summ >= 10000 && $summ <= 50000){
+                            $sale = 5;
+                        }else if($summ >= 50000 && $summ <= 300000){
+                            $sale = 10;
+                        }else if($summ >= 300000){
+                            $sale = 15;
+                        }else{
+                            $sale = 0;
+                        }
                     }
                     ?>
                     <article class="cardWrapper">
@@ -55,7 +59,8 @@ if ($_SESSION["user"] == "admin") {
             } ?>
     </section>
     <a href="createPartner.php" class="link">Добавить партнера</a>
-    <a href="index.php" class="exit">Выход</a>
+    <a href="approve.php" class="link">Посмотреть заявки</a>
+    <a href="exitpage.php" class="exit">Выход</a>
 </body>
 
 </html>
