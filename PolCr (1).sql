@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 04 2024 г., 13:10
+-- Время создания: Дек 05 2024 г., 13:59
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -171,16 +171,38 @@ CREATE TABLE `requests` (
   `name_partner` int DEFAULT NULL,
   `name-product` int DEFAULT NULL,
   `count_product` int DEFAULT NULL,
-  `approved` varchar(4) DEFAULT NULL,
-  `paid` varchar(4) DEFAULT NULL
+  `status` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `requests`
 --
 
-INSERT INTO `requests` (`id-request`, `name_partner`, `name-product`, `count_product`, `approved`, `paid`) VALUES
-(1, 1, 2, 10000, NULL, NULL);
+INSERT INTO `requests` (`id-request`, `name_partner`, `name-product`, `count_product`, `status`) VALUES
+(1, 1, 2, 10000, 2),
+(2, 2, 3, 2000, 2),
+(3, 3, 4, 3000, 3),
+(4, 5, 3, 22000, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `request_status`
+--
+
+CREATE TABLE `request_status` (
+  `id_status` int NOT NULL,
+  `name_atatus` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `request_status`
+--
+
+INSERT INTO `request_status` (`id_status`, `name_atatus`) VALUES
+(1, 'В работе'),
+(2, 'Одобренно'),
+(3, 'Оплачено');
 
 --
 -- Индексы сохранённых таблиц
@@ -225,7 +247,14 @@ ALTER TABLE `product_type_import`
 ALTER TABLE `requests`
   ADD PRIMARY KEY (`id-request`),
   ADD KEY `name_partner` (`name_partner`),
-  ADD KEY `name-product` (`name-product`);
+  ADD KEY `name-product` (`name-product`),
+  ADD KEY `status` (`status`);
+
+--
+-- Индексы таблицы `request_status`
+--
+ALTER TABLE `request_status`
+  ADD PRIMARY KEY (`id_status`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -265,7 +294,13 @@ ALTER TABLE `product_type_import`
 -- AUTO_INCREMENT для таблицы `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id-request` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id-request` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `request_status`
+--
+ALTER TABLE `request_status`
+  MODIFY `id_status` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -289,7 +324,8 @@ ALTER TABLE `products_import_1`
 --
 ALTER TABLE `requests`
   ADD CONSTRAINT `requests_ibfk_1` FOREIGN KEY (`name_partner`) REFERENCES `partners_import` (`id-partner-import`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `requests_ibfk_2` FOREIGN KEY (`name-product`) REFERENCES `products_import_1` (`id-product-import`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `requests_ibfk_2` FOREIGN KEY (`name-product`) REFERENCES `products_import_1` (`id-product-import`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `requests_ibfk_3` FOREIGN KEY (`status`) REFERENCES `request_status` (`id_status`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

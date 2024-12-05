@@ -89,4 +89,27 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+.formFilter {
+  width: 250px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.formFilter fieldset {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formFilter select {
+  width: 200px;
+}
+.formFilter input {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.userRequests {
+  margin: 40px auto;
 }/*# sourceMappingURL=style.css.map */

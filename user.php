@@ -19,6 +19,7 @@ $sale = 0;
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<a href="exitpage.php" class="exit">Выход</a>
 <section class="mainWrapper">
         <?php if(isset($queryForThisPartner) && !empty($queryForThisPartner)){ ?>
             <?php $row = mysqli_fetch_assoc($queryForThisPartner);
@@ -49,9 +50,23 @@ $sale = 0;
                         <p><?php echo $sale . "%";?></p>
                     </div>
                 </article>
-            <?php };?>
     </section>
-
-    <a href="exitpage.php" class="exit">Выход</a>
+    <table border="1" class="userRequests">
+        <tr>
+            <th>Материал</th>
+            <th>Количество</th>
+            <th>Статус</th>
+        </tr>
+    <?php 
+        $selectAllRequests = "SELECT * FROM `requests` WHERE `name_partner` = $idPartner";
+        $queryselectAllRequests = mysqli_query($link,$selectAllRequests);
+        while($row = mysqli_fetch_assoc($queryselectAllRequests)){?>
+        <tr>
+            <td><?php echo $row["name-product"]; ?></td>
+            <td><?php echo $row["count_product"]; ?></td>
+            <td><?php echo $row["status"]; ?></td>
+        </tr>
+        <?php }};?>
+    </table>
 </body>
 </html> 

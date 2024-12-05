@@ -84,3 +84,24 @@
     justify-content: space-between;
     margin:0 auto;
 }
+.formFilter{
+    width: 250px;
+    margin:0 auto;
+    padding:15px;
+    fieldset{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    select{
+        width: 200px;
+    }
+    input{
+        width: 200px;
+        margin-top: 20px;
+    }
+}
+.userRequests{
+    margin: 40px auto;
+}
